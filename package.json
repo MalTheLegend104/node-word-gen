@@ -1,0 +1,8 @@
+{
+  "name": "word-gen-master",
+  "version": "0.1.0",
+  "description": "Takes user input, adds it to a file, and then chooses random word from that file, the file is infinitely expandable and saves on each use.",
+  "main": "index.js",
+  "author": "Malcolm Alexander",
+  "license": "MIT"
+}
