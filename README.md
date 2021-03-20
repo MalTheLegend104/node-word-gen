@@ -1,3 +1,4 @@
+# This branch includes heavily commeneted code to make it easy for people that have never used node to understand it.
 # node-word-gen
 This project uses node.js to take user input, add it to a file, and then pick a random word. The possibilities for words is endless, as long as you have the file space. 
 
