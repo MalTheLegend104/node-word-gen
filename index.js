@@ -60,7 +60,6 @@ function pickRandom(finalArray){
         return list[Math.floor(Math.random() * list.length)];
     };
     const finalWord = finalArray.filter(e => e);
-    console.log(finalWord); 
     console.log( "The random word is: \n" + randomValue(finalWord) + "\n\n\n");
 }
 
