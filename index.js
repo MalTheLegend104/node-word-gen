@@ -4,7 +4,7 @@ const prompt = require('prompt-sync')({sigint: true}); //includes user prompts t
 
 start();
 function start(){
-    generateAnotherWord = true; z
+    generateAnotherWord = true;
     while (generateAnotherWord === true){
         var doMore = checkWriteMore();
         while (doMore === true){
