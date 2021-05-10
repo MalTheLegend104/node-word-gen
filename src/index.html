@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Word Selection</title>
+    <link rel="stylesheet" href="index.css">
+    <script type="text/javascript" src="submit.js"></script>
+  </head>
+  <body>
+    <p style="font-size: 24px;">Input Words Here:<br><span style="font-size: 15px;">Seperate words with either a line break(press return/enter) or seperate them with ";". If you plan to save the file, the first line/phrase will be used as the list name</span></p>
+    <form>
+      <textarea id="text" name="text" rows="12" cols="50"></textarea>
+      <br>
+      <label>Save List?</label>
+      <input type="checkbox" id="saveList" value="Save List?">
+      <br>
+      <button type="button" onsubmit="submitList()">Submit</button>
+    </form>
+    <div class="invisible" id="output">
+      <h1>Random Word:</h1>
+      <p id="Choice"></p>
+    </div>
+  </body>
+</html>
