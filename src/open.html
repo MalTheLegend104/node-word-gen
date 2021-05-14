@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>BGN Word Gen - Load List</title>
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="open.js"></script>
+        <script>
+            window.addEventListener('DOMContentLoaded', () => {
+                onPageLoad();
+            });
+        </script>
+    </head>
+    <body>
+        <form>
+            <label>Select List:</label><br>
+            <div id="container">
+            </div>
+            <br>
+            <button type="button" onclick="selectCurrentList()">Select</button>
+            <button type="button" onclick="delCurrentList()">Delete</button>
+        </form>
+
+    </body>
+</html>

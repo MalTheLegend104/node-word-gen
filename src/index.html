@@ -2,9 +2,27 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Word Selection</title>
-    <link rel="stylesheet" href="index.css">
+    <title>BGN Word Gen - Main</title>
+    <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="submit.js"></script>
+    <script>
+      const { ipcRenderer } = require('electron');
+      window.onload = function (){
+        const button = document.getElementById("open");
+        if (button){
+          button.addEventListener('click', () => {
+            ipcRenderer.send('show-open-window');
+          });
+        } else {
+          console.log("Can't find button.")
+        }
+      }
+
+      
+      ipcRenderer.on('action-update-label', (event, arg) => {
+          setCurrentList(arg.selectedList);
+      });
+    </script>
   </head>
   <body>
     <p style="font-size: 24px;">Input Words Here:<br><span style="font-size: 15px;">Seperate words with either a line break(press return/enter) or seperate them with ";". If you plan to save the file, the first line/phrase will be used as the list name</span></p>
@@ -14,11 +32,13 @@
       <label>Save List?</label>
       <input type="checkbox" id="saveList" value="Save List?">
       <br>
-      <button type="button" onsubmit="submitList()">Submit</button>
+      <button type="button" onclick="submitList()">Submit</button>
+      <button id="open" type="button">Open...</button>
     </form>
-    <div class="invisible" id="output">
-      <h1>Random Word:</h1>
-      <p id="Choice"></p>
-    </div>
+    <div id="output" class="invisible">
+      <p style="font-size: 24px;">Random Word:<br>
+			<input type="text" id="Choice" placeholder="Password" value="" readonly><br>
+			<button onclick="copyPass()" id="copyButton">Copy</button><span id="copyTag" class="invisible" style="color: green; margin: 0; padding: 0; font-size: 15px;">Copied!</span></p>
+		</div>
   </body>
 </html>
